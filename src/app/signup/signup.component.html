@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<div>
+    <form [formGroup]="signupform">
+        <div>
+            <label>Name*</label>
+            <input type="text" formControlName="name">
+        </div>
+        <div>
+            <p class="myclass" *ngIf="(signupform.controls['name'].touched || signupform.controls['name'].dirty) && signupform.controls['name'].invalid">Name is required</p>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" formControlName="email">
+        </div>
+        <div>
+            <label>Mobile</label>
+            <input type="text" formControlName="phone">
+        </div>
+        <div>
+            <label>Roll NO</label>
+            <input type="text" formControlName="rollNo">
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="text" formControlName="password">
+        </div>
+        <div>
+            <button [disabled]="!signupform.valid" (click)="signup()">SignUp!</button>
+        </div>
+    </form>
+</div>
