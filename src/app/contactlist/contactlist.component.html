@@ -1,1 +1,24 @@
-<p>contactlist works!</p>
+<button routerLink="/contacts/addcontact">Add</button>
+<table>
+    <thead>
+        <td>Sr No</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Desc</td>
+        <td>Actions</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of contacts; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.phone}}</td>
+            <td>{{c.description}}</td>
+            <td>
+                <button (click)="update(c)">Update</button>
+                <button (click)="delete(c.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
